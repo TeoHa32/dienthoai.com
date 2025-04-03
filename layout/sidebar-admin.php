@@ -41,7 +41,7 @@
                     <a href="?mod=admin&controller=product&action=redirectaddProduct" title="" class="nav-link">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?mod=admin&controller=product&action=index" title="" class="nav-link">Danh sách sản phẩm</a>
+                    <a href="?mod=admin&controller=product&action=pagination&page=1" title="" class="nav-link">Danh sách sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a href="?page=list_cat" title="" class="nav-link">Danh mục sản phẩm</a>

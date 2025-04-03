@@ -9,7 +9,7 @@
             <div class="section" id="title-page">
                 <div class="clearfix">
                     <h3 id="index" class="fl-left">Danh sách sản phẩm</h3>
-                    <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>
+                    <a href="?mod=admin&controller=product&action=redirectaddProduct" title="" id="add-new" class="fl-left">Thêm mới</a>
                 </div>
             </div>
             <div class="section" id="detail-page">
@@ -79,8 +79,8 @@
                                             <a href="" title=""><?php echo $item['name']?></a>
                                         </div>
                                         <ul class="list-operation fl-right">
-                                            <li><a href="" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                            <li><a href="" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                                            <li><a href="?mod=admin&controller=product&action=redirectEditProduct&id=<?php echo $item['id']?>" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                                            <li><a href="?mod=admin&controller=product&action=deleteProduct&id=<?php echo $item['id']?>" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </td>
                                     <td><span class="tbody-text"><?php echo currency_format($item['price'])?></span></td>
@@ -97,21 +97,21 @@
                 <div class="section-detail clearfix">
                     <p id="desc" class="fl-left">Chọn vào checkbox để lựa chọn tất cả</p>
                     <ul id="list-paging" class="fl-right">
+                        <?php if($page>1){?>
                         <li>
-                            <a href="" title=""><</a>
+                            <a href="<?php echo '?mod=admin&controller=product&action=pagination&page='.$page-1; ?>" title=""><</a>
                         </li>
+                        <?php }?>
+                        <?php for($i=1;$i<=$num_page;$i++){?>
                         <li>
-                            <a href="" title="">1</a>
+                            <a href="?mod=admin&controller=product&action=pagination&page=<?php echo $i?>" title=""><?php echo $i?></a>
                         </li>
+                        <?php }?>
+                        <?php if($page<$num_page){?>
                         <li>
-                            <a href="" title="">2</a>
+                            <a href="<?php echo '?mod=admin&controller=product&action=pagination&page='.$page+1; ?>" title="">></a>
                         </li>
-                        <li>
-                            <a href="" title="">3</a>
-                        </li>
-                        <li>
-                            <a href="" title="">></a>
-                        </li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
