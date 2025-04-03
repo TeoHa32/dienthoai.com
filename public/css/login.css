@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    min-height: 65vh;
     background: #f5f5f5;
 }
 .login-box {
@@ -84,3 +84,8 @@
 .register-link a:hover {
     text-decoration: underline;
 }
+/* .error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+} */

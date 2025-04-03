@@ -58,8 +58,11 @@
                             </div>
                             <div id="action-wp" class="fl-right">
                                 <div id="advisory-wp" class="fl-left">
-                                    <span class="title"><a href="?mod=users&action=index"><i class="fa fa-user" aria-hidden="true"></i></a></span>
-                                    
+                                    <?php if(isset($_SESSION['is_login'])){ ?>
+                                    <span class="title"><a href="#"><i class="fa-solid fa-user"  aria-hidden="true"></i></i></a></span>
+                                    <?php }else{ ?>
+                                    <span class="title"><a href="?mod=users&action=index"><i class="fa-solid fa-right-to-bracket"  aria-hidden="true"></i></a></span>
+                                    <?php } ?>
                                 </div>
                                 <div id="btn-respon" class="fl-right"><i class="fa fa-bars" aria-hidden="true"></i></div>
                                 <a href="?page=cart" title="giỏ hàng" id="cart-respon-wp" class="fl-right">

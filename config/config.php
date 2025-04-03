@@ -17,3 +17,7 @@ $config['base_url'] = "http://localhost/projectmvc.vn/";
 $config['default_module'] = 'home';
 $config['default_controller'] = 'index';
 $config['default_action'] = 'index';
+if(isset($_COOKIE['username'])){
+    $_SESSION['is_login'] = true;
+    $_SESSION['username'] = $_COOKIE['username'];
+}

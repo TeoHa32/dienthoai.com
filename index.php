@@ -4,7 +4,8 @@
  * app path
  * --------------------------------------------------------------------
  */
-
+session_start();
+ob_start();
 $app_path = dirname(__FILE__);
 define('APPPATH', $app_path);
 /*
@@ -57,3 +58,4 @@ $config_folder= 'config';
 define('CONFIGPATH', APPPATH.DIRECTORY_SEPARATOR.$config_folder);
 
 require COREPATH.DIRECTORY_SEPARATOR.'appload.php'; 
+?>

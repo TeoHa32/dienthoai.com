@@ -1,5 +1,6 @@
 <?php
     get_header();
+    get_sidebar();
 ?>
 <div id="main-content-wp" class="home-page clearfix">
     <div class="wp-inner">

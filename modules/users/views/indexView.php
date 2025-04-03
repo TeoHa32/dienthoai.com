@@ -6,22 +6,25 @@
 <div class="login-container">
     <div class="login-box">
         <h2>Đăng nhập hệ thống</h2>
-        <form action="" method="POST">
+        <form action="?mod=users&controller=index&action=login" method="POST">
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" name="username" placeholder="Tên đăng nhập" required>
+                <input type="text" name="username" placeholder="Tên đăng nhập" required value="<?php if(!empty($data['username'])) echo $data['username'] ?>">
+                <p class="error-message"><?php if(!empty($error['username'])) echo $error['username'] ?></p>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Mật khẩu" required>
+                <input type="password" name="password" placeholder="Mật khẩu" required value="<?php if(!empty($data['password'])) echo $data['password'] ?>">
+                <p class="error-message"><?php if(!empty($error['password'])) echo $error['password'] ?></p>
             </div>
             <div class="remember-forgot">
                 <label>
-                    <input type="checkbox" name="remember"> Ghi nhớ đăng nhập
+                    <input type="checkbox" name="remember" <?php if(!empty($data['remember'])) echo 'checked' ?>> Ghi nhớ đăng nhập
                 </label>
                 <a href="#">Quên mật khẩu?</a>
             </div>
-            <button type="submit" class="login-btn">Đăng nhập</button>
+            <p class="error-message"><?php if(!empty($error['login'])) echo $error['login'] ?></p>
+            <button type="submit" class="login-btn" name="login">Đăng nhập</button>
             <div class="register-link">
                 Chưa có tài khoản? <a href="?mod=users&controller=index&action=redirectRegister">Đăng ký</a>
             </div>
