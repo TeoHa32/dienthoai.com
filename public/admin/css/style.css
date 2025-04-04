@@ -7,6 +7,7 @@
     width: 35%;
     margin-bottom: 15px;
 }
+
 .add-cat-page #detail-page .section-detail textarea{
     display: block;
     padding: 5px 10px;
@@ -559,3 +560,224 @@ a{ text-decoration: none!important;}
         min-height: 100px;
         resize: vertical;
     }
+    .active{
+        color: red;
+    }
+    
+    .list-employee-page #content {
+        padding: 20px;
+        background: #fff;
+        border-radius: 4px;
+    }
+    
+    .list-employee-page #title-page {
+        margin-bottom: 20px;
+    }
+    
+    .list-employee-page #add-new {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #4CAF50;
+        color: #fff;
+        border-radius: 4px;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+    
+    .list-employee-page .filter-wp {
+        margin-bottom: 20px;
+    }
+    
+    .list-employee-page .form-s input[type="text"] {
+        padding: 6px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 5px;
+    }
+    
+    .list-employee-page .form-s input[type="submit"] {
+        padding: 6px 15px;
+        background: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .list-employee-page table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .list-employee-page table td {
+        padding: 15px;
+        border: 1px solid #ddd;
+    }
+    
+    .list-employee-page thead {
+        background: #f5f5f5;
+    }
+    
+    .list-employee-page .btn-edit,
+    .list-employee-page .btn-delete {
+        display: inline-block;
+        padding: 5px 10px;
+        color: #fff;
+        border-radius: 3px;
+        margin: 0 3px;
+    }
+    
+    .list-employee-page .btn-edit {
+        background: #2196F3;
+    }
+    
+    .list-employee-page .btn-delete {
+        background: #f44336;
+    }
+    
+    .list-employee-page .fa {
+        font-size: 14px;
+    }
+
+.add-employee-page {
+    padding: 20px;
+    background: #fff;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+#title-page h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.section-detail form {
+    width: 100%;
+    max-width: 600px;
+}
+
+.section-detail label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.form-input, .form-textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+ 
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#btn-submit {
+    display: block;
+    padding: 10px 30px;
+    background: #4FA327;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#btn-submit:hover {
+    background: #3d8820;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fl-left {
+    float: left;
+}
+
+.fl-right {
+    float: right;
+}
+p.error{
+    color: red;
+    font-size: 7px;
+}
+.edit-employee-page #content {
+    padding: 20px;
+    background: #fff;
+}
+
+.edit-employee-page .section-detail {
+    padding: 20px;
+}
+
+.edit-employee-page .section-detail form {
+    width: 100%;
+    max-width: 600px;
+}
+
+.edit-employee-page .section-detail label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.edit-employee-page .section-detail input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.edit-employee-page .section-detail input:focus {
+    border-color: #4fa1f4;
+    outline: none;
+}
+
+.edit-employee-page .section-detail input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.edit-employee-page .error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.edit-employee-page #btn-submit {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #4fa1f4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.edit-employee-page #btn-submit:hover {
+    background: #3d8ad8;
+}
+
+.edit-employee-page #title-page {
+    margin-bottom: 20px;
+}
+
+.edit-employee-page #title-page h3 {
+    font-size: 20px;
+    font-weight: 600;
+}

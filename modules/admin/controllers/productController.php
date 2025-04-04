@@ -12,6 +12,22 @@
         $listCategory = getListCategory();
         load_view('addProduct',['listCategory' => $listCategory]);
     }
+    function paginationAction(){
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+            $limit = 5;
+            $listProduct = pagination($page,$limit);
+            $num_page = ceil(getTotalRow()/$limit);
+            load_view('listProduct',['listProduct' => $listProduct,'num_page' => $num_page,'page' => $page]);
+        }
+        else {
+            $page = 1;
+            $limit = 5;
+            $listProduct = pagination($page,$limit);
+            $num_page = ceil(getTotalRow()/$limit);
+            load_view('listProduct',['listProduct' => $listProduct,'num_page' => $num_page,'page' => $page]);
+        }
+    }
     function addProductAction(){
         $listCategory = getListCategory();
         
@@ -38,8 +54,7 @@
                         'is_delete' => 'false',
                     );
                     if(addProduct($data)){
-                        $listProduct = getListProduct();
-                        load_view('listProduct',['listProduct' => $listProduct]);
+                        paginationAction();
                     }else{
                         $error['addProduct'] = "Thêm sản phẩm thất bại";
                         load_view('addProduct',['error' => $error,'data'=>$data,'img'=>$img_tmp_path,'listCategory' => $listCategory]);
@@ -59,22 +74,7 @@ function redirectEditProductAction(){
         load_view('editProduct',['product' => $product,'img'=>$img,'listCategory'=>$listCategory]);
     }
 }
-function paginationAction(){
-    if(isset($_GET['page'])){
-        $page = $_GET['page'];
-        $limit = 5;
-        $listProduct = pagination($page,$limit);
-        $num_page = ceil(getTotalRow()/$limit);
-        load_view('listProduct',['listProduct' => $listProduct,'num_page' => $num_page,'page' => $page]);
-    }
-    else {
-        $page = 1;
-        $limit = 5;
-        $listProduct = pagination($page,$limit);
-        $num_page = ceil(getTotalRow()/$limit);
-        load_view('listProduct',['listProduct' => $listProduct,'num_page' => $num_page,'page' => $page]);
-    }
-}
+
 function editProductAction(){
     if(isset($_POST['btn-submit'])){
         $id = $_POST['id'];
@@ -144,6 +144,25 @@ function editProductAction(){
                 
                 paginationAction();
             }
+        }
+    }
+    function searchProductAction(){
+        if(isset($_GET['sm_s'])){
+            $keyword = $_GET['s'];
+            $listProduct = searchProduct($keyword);
+            if(!empty($listProduct)){
+                $page =1;
+                $num_page = ceil(getTotalRow()/5);
+                load_view('listProduct',['listProduct' => $listProduct,'page' => $page,'num_page' => $num_page]);
+            }
+            else{
+                $error['searchProduct'] = "Không tìm thấy sản phẩm";
+                $listProduct = getListProduct();
+                $page =1;
+                $num_page = ceil(getTotalRow()/5);
+                load_view('listProduct',['error' => $error,'listProduct' => $listProduct,'page' => $page,'num_page' => $num_page]);
+            }
+
         }
     }
     

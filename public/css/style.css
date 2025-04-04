@@ -19,6 +19,9 @@
     color: #fff;
     padding: 10px 0px 10px 20px;
 }
+.active{
+    color: red;
+}
 #head-top #payment-link:before{
     position: absolute;
     content: '\f0c1';

@@ -60,4 +60,12 @@
         $list_user =  db_fetch_array('SELECT * FROM products WHERE is_delete=0 LIMIT '.$start.','.$limit);
         return $list_user;
     }
+    function searchProduct($keyword){
+        $sql="SELECT * FROM products WHERE is_delete=0 AND name LIKE '%$keyword%'";
+        $result=db_fetch_array($sql);
+        if(!empty($result)){
+            return $result;
+        }
+        return false;
+    }
 ?>

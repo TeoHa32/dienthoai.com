@@ -21,22 +21,16 @@
                             <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li>
                             <li class="pending"><a href="">Thùng rác<span class="count">(0)</span></a></li>
                         </ul>
-                        <form method="GET" class="form-s fl-right">
+                        <form action="" method="GET" class="form-s fl-right">
+                            <input type="text" name="mod" value="admin" hidden>
+                            <input type="text" name="controller" value="product" hidden>
+                            <input type="text" name="action" value="searchProduct" hidden>
                             <input type="text" name="s" id="s">
-                            <input type="submit" name="sm_s" value="Tìm kiếm">
+                            
+                            <button type="submit" name="sm_s" value="Tìm kiếm">Tìm kiếm</button>
                         </form>
                     </div>
-                    <div class="actions">
-                        <form method="GET" action="" class="form-actions">
-                            <select name="actions">
-                                <option value="0">Tác vụ</option>
-                                <option value="1">Công khai</option>
-                                <option value="1">Chờ duyệt</option>
-                                <option value="2">Bỏ vào thủng rác</option>
-                            </select>
-                            <input type="submit" name="sm_action" value="Áp dụng">
-                        </form>
-                    </div>
+                    
                     <div class="table-responsive">
                         <table class="table list-table-wp">
                             <thead>
@@ -104,7 +98,7 @@
                         <?php }?>
                         <?php for($i=1;$i<=$num_page;$i++){?>
                         <li>
-                            <a href="?mod=admin&controller=product&action=pagination&page=<?php echo $i?>" title=""><?php echo $i?></a>
+                            <a href="?mod=admin&controller=product&action=pagination&page=<?php echo $i?>" title="" ><span <?php if($page==$i){echo 'class="active"';}?>><?php echo $i?></span></a>
                         </li>
                         <?php }?>
                         <?php if($page<$num_page){?>
