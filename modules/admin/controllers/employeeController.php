@@ -65,6 +65,7 @@
     }
     function redirectEditEmployeeAction(){
         if(isset($_GET['id'])){
+
             $id = $_GET['id'];
             $employee = getEmployeeById($id);
             load_view('editEmployee',['employee' => $employee]);
@@ -89,14 +90,19 @@
             }
             else{
                 if(updateEmployee('users',$data,'id = '.$id)){
-                    paginationAction();
+                    $user = getEmployeeById($id);
+                    if($user['role'] == 2){
+                        paginationAction();
+                    }
+                    else{
+                        redirect('?mod=admin&controller=index&action=index');
+                    }
                 }
                 else{
                     $error['db'] = 'Sửa nhân viên thất bại';
                     load_view('editEmployee',['error' => $error,'data' => $data]);
                 }
             }
-            
         }
     }
     function deleteEmployeeAction(){
@@ -113,5 +119,48 @@
         else{
             paginationAction();
         }
+    }
+    function searchEmployeeAction(){
+        if(isset($_GET['sm_s'])){
+            $keyword = $_GET['s'];
+            $listEmployee = searchEmployee($keyword);
+            if(!empty($listEmployee)){
+                $page =1;
+                $num_page = ceil(getTotalRow()/5);
+                load_view('listEmployee',['listEmployee' => $listEmployee,'page' => $page,'num_page' => $num_page]);
+            }
+            else{
+                $error['searchEmployee'] = "Không tìm thấy nhân viên";
+                $listEmployee = getListEmployee();
+                $page =1;
+                $num_page = ceil(getTotalRow()/5);
+                load_view('listEmployee',['error' => $error,'listEmployee' => $listEmployee,'page' => $page,'num_page' => $num_page]);
+            }
+        }
+    }
+    function redirectInfoProfileAction(){
+        if(isset($_GET['username'])){
+            $username = $_GET['username'];
+            $employee = getEmployeeByUsername($username);
+            if($employee != false){
+               
+                load_view('infoProfile',['user' => $employee]);
+            }
+            else{
+                redirect('?mod=admin&controller=index&action=index');
+            }
+        }
+        else{
+            redirect('?mod=admin&controller=index&action=index');
+        }
+        
+    }
+    function logoutAdminAction(){
+        unset($_SESSION['usernameAdmin']);
+        unset($_SESSION['passwordAdmin']);
+        setcookie('usernameAdmin','',time()-1);
+        setcookie('passwordAdmin','',time()-1);
+        unset($_SESSION['is_loginAdmin']);
+        redirect('?mod=users&controller=index&action=index');
     }
 ?>

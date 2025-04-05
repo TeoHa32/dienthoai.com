@@ -1,3 +1,16 @@
+
+<?php if(!isset($_SESSION['is_loginAdmin'])){?>
+<?php redirect('?mod=admin&controller=login&action=index');?> 
+
+<?php }?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -84,8 +97,8 @@
                                 <h3 id="account" class="fl-right"><?php if(isset($_SESSION['usernameAdmin'])){echo $_SESSION['usernameAdmin'];}?></h3>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="?page=info_account" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
-                                <li><a href="#" title="Thoát">Thoát</a></li>
+                                <li><a href="?mod=admin&controller=employee&action=redirectInfoProfile&username=<?php echo $_SESSION['usernameAdmin']?>" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
+                                <li><a href="?mod=admin&controller=employee&action=logoutAdmin" title="Thoát">Thoát</a></li>
                             </ul>
                         </div>
                     </div>

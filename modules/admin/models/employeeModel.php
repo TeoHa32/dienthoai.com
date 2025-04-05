@@ -48,7 +48,7 @@
         return $list_user;
     }
     function searchEmployee($keyword){
-        $sql="SELECT * FROM users WHERE role = 2 AND name LIKE '%$keyword%'";
+        $sql="SELECT * FROM users WHERE role = 2 AND fullname LIKE '%$keyword%'";
         $result=db_fetch_array($sql);
         if(!empty($result)){
             return $result;
@@ -63,5 +63,11 @@
         }else{
             return true;
         }
+    }
+    function getEmployeeByUsername($username){
+        $sql = "SELECT * FROM users where  username = '{$username}'";
+        $result = db_fetch_row($sql);
+        if(!empty($result)) return $result;
+        return false;
     }
 ?>

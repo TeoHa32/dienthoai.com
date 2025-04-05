@@ -21,3 +21,7 @@ if(isset($_COOKIE['username'])){
     $_SESSION['is_login'] = true;
     $_SESSION['username'] = $_COOKIE['username'];
 }
+if(isset($_COOKIE['usernameAdmin'])){
+    $_SESSION['is_loginAdmin'] = true;
+    $_SESSION['usernameAdmin'] = $_COOKIE['usernameAdmin'];
+}

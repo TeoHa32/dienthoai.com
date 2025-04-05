@@ -781,3 +781,72 @@ p.error{
     font-size: 20px;
     font-weight: 600;
 }
+.info-profile-page {
+    padding: 20px;
+}
+
+.info-profile-page .section-detail {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.info-profile-page .form-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.info-profile-page label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.info-profile-page .error {
+    color: #dc3545;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.info-profile-page #btn-submit {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.info-profile-page #btn-submit:hover {
+    background: #45a049;
+}
+
+.info-profile-page .change-password-link {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.info-profile-page .change-password-link:hover {
+    background: #0056b3;
+    text-decoration: none;
+}
+
+.info-profile-page a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-profile-page a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

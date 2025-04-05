@@ -15,7 +15,10 @@
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
                         <form method="GET" class="form-s fl-right">
-                            <input type="text" name="s" id="s">
+                            <input type="hidden" name="mod" value="admin">
+                            <input type="hidden" name="controller" value="employee">
+                            <input type="hidden" name="action" value="searchEmployee">
+                            <input type="text" name="s" id="s" placeholder="Nhập tên nhân viên ...">
                             <input type="submit" name="sm_s" value="Tìm kiếm">
                         </form>
                     </div>
