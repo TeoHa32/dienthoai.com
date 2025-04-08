@@ -15,6 +15,14 @@
         }
         return false;
     }
+    function getProductById($id){
+        $sql = "SELECT * FROM products WHERE id = $id";
+        $result = db_fetch_row($sql);
+        if(!empty($result)){
+            return $result;
+        }
+        return false;
+    }
     function getListImg(){
         $sql="SELECT * FROM image";
         $result=db_fetch_array($sql);

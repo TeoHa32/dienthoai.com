@@ -74,39 +74,7 @@
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span id="num">2</span>
                                     </div>
-                                    <div id="dropdown">
-                                        <p class="desc">Có <span>2 sản phẩm</span> trong giỏ hàng</p>
-                                        <ul class="list-cart">
-                                            <li class="clearfix">
-                                                <a href="" title="" class="thumb fl-left">
-                                                    <img src="public/images/img-pro-11.png" alt="">
-                                                </a>
-                                                <div class="info fl-right">
-                                                    <a href="" title="" class="product-name">Sony Express X6</a>
-                                                    <p class="price">6.250.000đ</p>
-                                                    <p class="qty">Số lượng: <span>1</span></p>
-                                                </div>
-                                            </li>
-                                            <li class="clearfix">
-                                                <a href="" title="" class="thumb fl-left">
-                                                    <img src="public/images/img-pro-23.png" alt="">
-                                                </a>
-                                                <div class="info fl-right">
-                                                    <a href="" title="" class="product-name">Laptop Lenovo 10</a>
-                                                    <p class="price">16.250.000đ</p>
-                                                    <p class="qty">Số lượng: <span>1</span></p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="total-price clearfix">
-                                            <p class="title fl-left">Tổng:</p>
-                                            <p class="price fl-right">18.500.000đ</p>
-                                        </div>
-                                        <dic class="action-cart clearfix">
-                                            <a href="?page=cart" title="Giỏ hàng" class="view-cart fl-left">Giỏ hàng</a>
-                                            <a href="?page=checkout" title="Thanh toán" class="checkout fl-right">Thanh toán</a>
-                                        </dic>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

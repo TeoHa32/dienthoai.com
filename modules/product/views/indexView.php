@@ -38,7 +38,7 @@
                         <?php if(isset($listProduct)){ ?>
                         <?php foreach($listProduct as $item){ ?>
                         <li>
-                            <a href="?page=detail_product" title="" class="thumb">
+                            <a href="?mod=product&controller=index&action=redirectDetailProduct&id=<?php echo $item['id']?>" title="" class="thumb">
                                 <img src="<?php echo getImgById($item['id'])['src']?>">
                             </a>
                             <a href="?page=detail_product" title="" class="product-name"><?php echo $item['name']?></a>
