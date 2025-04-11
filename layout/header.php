@@ -65,14 +65,15 @@
                                     <?php } ?>
                                 </div>
                                 <div id="btn-respon" class="fl-right"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                                <a href="?page=cart" title="giỏ hàng" id="cart-respon-wp" class="fl-right">
+                                <a href="?mod=cart&controller=index&action=index" title="giỏ hàng" id="cart-respon-wp" class="fl-right">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span id="num">2</span>
+                                    <span id="num"><?php if(isset($_SESSION['cart']['info']['num_order'])) echo $_SESSION['cart']['info']['num_order']; else echo 0; ?></span>
                                 </a>
-                                <div id="cart-wp" class="fl-right">
+                                <div id="cart-wp" class="fl-right" onclick="window.location.href='?mod=cart&controller=index&action=index'">
+                                    
                                     <div id="btn-cart">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        <span id="num">2</span>
+                                        <span id="num"><?php if(isset($_SESSION['cart']['info']['num_order'])) echo $_SESSION['cart']['info']['num_order']; else echo 0; ?></span>
                                     </div>
                                     
                                 </div>

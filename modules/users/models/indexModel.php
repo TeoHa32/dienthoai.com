@@ -43,4 +43,12 @@
         }
         return false;
     }
+    function getUserByUsername($username){
+        $query = "SELECT * FROM users WHERE username = '{$username}'";
+        $result = db_fetch_row($query);
+        if(!empty($result)){
+            return $result;
+        }
+        return false;
+    }
 ?>
