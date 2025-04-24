@@ -104,4 +104,66 @@
         }
         }
     }
+    function detailUserAction(){
+        $username = $_SESSION['username'];
+        $user = getUserByUsername($username);
+        load_view('detailUser',['user' => $user]);
+    }
+    function orderHistoryAction(){
+        $username = $_SESSION['username'];
+        $user = getUserByUsername($username);
+        $listInfo = getListBillByCustomerId($user['id']);
+        
+        load_view('orderHistory',['listInfo' => $listInfo]);
+    }
+    function logoutAction(){
+        // Clear all session variables
+        $_SESSION = array();
+
+        // Destroy the session
+        session_destroy();
+
+        // Clear all cookies
+        if (isset($_SERVER['HTTP_COOKIE'])) {
+            $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+            foreach($cookies as $cookie) {
+                $parts = explode('=', $cookie);
+                $name = trim($parts[0]);
+                setcookie($name, '', time()-3600, '/');
+            }
+        }
+
+        // Specifically clear these cookies as well
+        setcookie('username', '', time()-3600, '/');
+        setcookie('password', '', time()-3600, '/');
+        setcookie('usernameAdmin', '', time()-3600, '/');
+        setcookie('passwordAdmin', '', time()-3600, '/');
+        redirect('?mod=home&controller=index&action=index');
+    }
+function updateUserAction() {
+    if(isset($_POST['btn-update'])) {
+        $fullname = $_POST['fullname'];
+        $email = $_POST['email']; 
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
+        $id = $_POST['id'];
+       $password = $_POST['password'];
+        $data = array(
+            'fullname' => $fullname,
+            'email' => $email,
+            'phone' => $phone,
+            'address' => $address,
+            'password'=>$password
+        );
+        $where = 'id = '.$id;
+        if(updateUser( $data, $where)) {
+            $username = $_SESSION['username'];
+            $user = getUserByUsername($username);
+            load_view('detailUser',['user' => $user]);
+        }
+        
+    }
+    else echo 1;
+    
+}
 ?>

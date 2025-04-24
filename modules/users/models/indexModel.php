@@ -51,4 +51,16 @@
         }
         return false;
     }
+    function updateUser($data,$where){
+        if(db_update('users',$data,$where)){
+            return true;
+        }
+        return false;
+    }
+    function getListBillByCustomerId($id){
+        $sql = "SELECT * FROM bill WHERE id_customer = {$id}";
+        $result = db_fetch_array($sql);
+        return $result;
+        
+    }
 ?>
