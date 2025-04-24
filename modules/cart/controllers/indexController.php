@@ -6,7 +6,6 @@
         if(!isset($_SESSION['is_login'])){
             redirect('?mod=users&controller=index&action=index');
         }
-        
     }
     function indexAction(){
         load_view('cart');
@@ -15,29 +14,16 @@
         if(isset($_GET['id'])){
             $id= (int)$_GET['id'];
             $item = getProductById($id);
-            
+            $action = $_GET['action'];
             if(addToCart($item)){
-                echo "<script>alert('Thêm sản phẩm vào giỏ hàng thành công');
-                window.location.href = '?mod=product&controller=index&action=redirectDetailProduct&id=".$id."';
-                </script>";
-
-
-            }else{
-                echo "<script>alert('thêm sản phẩm thất bại');
-                window.location.href = '?mod=product&controller=index&action=redirectDetailProduct&id=".$id."';
-                </script>";
+                echo "<script>history.back();</script>";
             }
-            
-            
     }
-
 }
 function deleteAction(){
     deleteCart();
     load_view('cart');
 }
-
-    
 function deleteItemAction(){
     if(isset($_GET['id'])){
         $id = (int)$_GET['id'];
@@ -55,11 +41,40 @@ function updateCartAction(){
 function checkoutAction(){
     $username = $_SESSION['username'];
     $user = getUserByUsername($username);
+    print_r($user);
     load_view('checkOut',['user'=>$user]);
 }
+function orderAction(){
+    if(isset($_POST['checkout'])){
+        $id_customer = $_POST['id'];
+        $address = $_POST['address'];
+        $payment = $_POST['payment'];
+        $total = $_SESSION['cart']['info']['total'];
+        $data = array(
+            'id_customer'=>$id_customer,
+            'address'=>$address,
+            'payment_method'=> $payment,
+            'status'=>0,
+            'total' => $total
+        );
 
-
-
-
-
+        if(!empty($data)){
+            $result = addToBill($data);
+            echo $result;
+            if($result > 0){
+                foreach($_SESSION['cart']['buy'] as $key => $value){
+                    $data_info = array(
+                        'bill_id' => $result,
+                        'product_id'=> $value['id'],
+                         'quantity'=> $value['qty']
+                    );
+                    if(addToBillInfo($data_info)){
+                        unset($_SESSION['cart']);
+                        load_view("orderInfo");
+                    }
+                }
+            }
+        }
+    }
+}
 ?>

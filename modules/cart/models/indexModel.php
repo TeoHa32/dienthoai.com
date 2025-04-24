@@ -29,6 +29,15 @@
 function deleteCart(){
     unset($_SESSION['cart']);
 }
+function addToBill($data){
+    return db_insert('bill', $data);
+}
+function addToBillInfo($data){
+    if(db_insert('billinfo',$data)){
+        return true;
+    }
+    return false;
+}
 function deleteItem($id){
     foreach($_SESSION['cart']['buy'] as $key => $value){
         if($value['id'] == $id){

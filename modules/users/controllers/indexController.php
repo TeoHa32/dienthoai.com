@@ -20,12 +20,16 @@
         global $error;
         if(isset($_POST['register'])){
         $username = $_POST['username'];
+        $fullname = $_POST['fullname'];
+        $address = $_POST['address'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $re_password = $_POST['re_password'];
         $data = array(
             'username' => $username,
+            'fullname'=> $fullname,
+            'address'=> $address,
             'email' => $email,
             'phone' => $phone,
             'password' => $password,
@@ -39,7 +43,7 @@
             $error['re_password'] = validate_re_password($re_password,$password);
             load_view('register',['error' => $error,'data' => $data]);
         }else{
-            if(checkUsername($username)){
+            if(!checkUsername($username)){
                 $error['username'] = "Tên đăng nhập đã tồn tại";
                 load_view('register',['error' => $error,'data' => $data]);
             }else{

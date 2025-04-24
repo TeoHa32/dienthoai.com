@@ -163,10 +163,7 @@
                         <label for="fullname">Họ tên</label>
                         <input type="text" name="fullname" id="fullname" value="<?php if(isset($user['fullname'])) echo $user['fullname']; ?>" required>
                     </div>
-                    <div class="form-row">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" value="<?php if(isset($user['email'])) echo $user['email']; ?>" required>
-                    </div>
+                    <input type="text" name="id" id="id" hidden value="<?php if(isset($user['id'])) echo $user['id']; ?>" >
                     <div class="form-row">
                         <label for="address">Địa chỉ giao hàng</label>
                         <input type="text" name="address" id="address" value="<?php if(isset($user['address'])) echo $user['address']; ?>" required>
@@ -182,6 +179,9 @@
                             <option value="cash">Thanh toán tiền mặt</option>
                         </select>
                     </div>
+                    <div class="place-order-wp">
+            <input type="submit" name="checkout" value="Đặt hàng" form="form-checkout">
+        </div>
                 </form>
             </div>
         </div>
@@ -219,12 +219,6 @@
                 </table>
             </div>
         </div>
-        <div class="place-order-wp">
-            <input type="submit" name="checkout" value="Đặt hàng" form="form-checkout">
-        </div>
     </div>
 </div>
-
-
-
 <?php get_footer(); ?>

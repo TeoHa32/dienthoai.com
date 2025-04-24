@@ -12,6 +12,7 @@
 @import '../public/css/import/checkout.css'; */
 
 /*HEADER*/
+
 #head-top{ background: #d9263c;}
 #head-top #main-menu li{ float: left;}
 #head-top #payment-link{
@@ -22,6 +23,16 @@
 }
 .active{
     color: red;
+}
+#btn-r-price{
+        padding: 5px 10px;
+        background-color: white;
+        border: 0.5px solid gray;
+        transition: all 0.5s;
+}
+#btn-r-price:hover{
+    background-color: #e76c6c;
+    color:white;
 }
 #head-top #payment-link:before{
     position: absolute;

@@ -51,9 +51,12 @@
                         <div class="wp-inner">
                             <a href="?page=home" title="" id="logo" class="fl-left"><img src="public/images/logo.png"/></a>
                             <div id="search-wp" class="fl-left">
-                                <form method="POST" action="">
+                                <form method="GET" >
+                                <input type="text" name="mod" value="product" hidden>
+                                <input type="text" name="controller" value="index" hidden>
+                                <input type="text" name="action" value="search" hidden>
                                     <input type="text" name="s" id="s" placeholder="Nhập từ khóa tìm kiếm tại đây!">
-                                    <button type="submit" id="sm-s">Tìm kiếm</button>
+                                    <button type="submit" id="sm-s" name="sm-s">Tìm kiếm</button>
                                 </form>
                             </div>
                             <div id="action-wp" class="fl-right">

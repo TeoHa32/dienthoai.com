@@ -17,8 +17,18 @@
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
+                <input type="text" name="fullname" placeholder="Fullname" required value="<?php if(!empty($data['fullname'])) echo $data['fullname'] ?>">
+                <p class="error-message"><?php if(!empty($error['fullname'])) echo $error['fullname'] ?></p>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
                 <input type="email" name="email" placeholder="Email" required value="<?php if(!empty($data['email'])) echo $data['email'] ?>">
                 <p class="error-message"><?php if(!empty($error['email'])) echo $error['email'] ?></p>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="address" placeholder="Address" required value="<?php if(!empty($data['address'])) echo $data['address'] ?>">
+                <p class="error-message"><?php if(!empty($error['address'])) echo $error['address'] ?></p>
             </div>
             <div class="input-group">
                 <i class="fas fa-phone"></i>
