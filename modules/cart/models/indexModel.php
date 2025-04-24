@@ -67,4 +67,36 @@ function updateCart($list){
     $_SESSION['cart']['info']['num_order'] = $num_order;
     $_SESSION['cart']['info']['total'] = $total;
 }
+function getListInfoBill($id){
+    $sql = "SELECT * FROM billinfo WHERE bill_id = $id";
+    $result = db_fetch_array($sql);
+    print_r($result);
+    if(!empty($result)){
+        return $result;
+    }
+    return false;
+}
+function getProductCartById($id){
+    $sql = "SELECT * FROM products WHERE id = $id";
+    $result = db_fetch_row($sql);
+    if(!empty($result)){
+        return $result;
+    }
+    return false;
+}
+function getCustomerById($id){
+    $sql = "SELECT * FROM users WHERE id = $id";
+    $result = db_fetch_row($sql);
+    if(!empty($result)){
+        return $result;
+    }
+}
+function getBillById($id){
+    $sql = "SELECT * FROM bill WHERE id = $id";
+    $result = db_fetch_row($sql);
+    if(!empty($result)){
+        return $result;
+    }
+    return false;
+}
 ?>

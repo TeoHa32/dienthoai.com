@@ -30,7 +30,6 @@
     display: block;
     clear: both;
 }
-
 #customer-info-wp {
     float: left;
     width: 47%;

@@ -62,7 +62,7 @@
                             <div id="action-wp" class="fl-right">
                                 <div id="advisory-wp" class="fl-left">
                                     <?php if(isset($_SESSION['is_login'])){ ?>
-                                    <span class="title"><a href="#"><i class="fa-solid fa-user"  aria-hidden="true"></i></i></a></span>
+                                    <span class="title"><a href="?mod=users&controller=index&action=detailUser"><i class="fa-solid fa-user"  aria-hidden="true"></i></i></a></span>
                                     <?php }else{ ?>
                                     <span class="title"><a href="?mod=users&action=index"><i class="fa-solid fa-right-to-bracket"  aria-hidden="true"></i></a></span>
                                     <?php } ?>

@@ -60,7 +60,9 @@ function orderAction(){
 
         if(!empty($data)){
             $result = addToBill($data);
-            echo $result;
+           $bill = getBillById($result);
+           $id_customer = $bill['id_customer'];
+           $customer = getCustomerById($id_customer);
             if($result > 0){
                 foreach($_SESSION['cart']['buy'] as $key => $value){
                     $data_info = array(
@@ -68,9 +70,12 @@ function orderAction(){
                         'product_id'=> $value['id'],
                          'quantity'=> $value['qty']
                     );
-                    if(addToBillInfo($data_info)){
+                    $result_info = addToBillInfo($data_info);
+                    if($result_info > 0){
                         unset($_SESSION['cart']);
-                        load_view("orderInfo");
+                        $listInfoBill = getListInfoBill($result);
+                        // print_r($listInfoBill);
+                        load_view("detailBill",['listInfoBill'=>$listInfoBill,'bill'=>$bill,'customer'=>$customer]);
                     }
                 }
             }
