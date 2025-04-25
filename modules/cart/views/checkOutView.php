@@ -174,7 +174,7 @@
                     <div class="form-row">
                         <label>Hình thức thanh toán</label>
                         <select name="payment">
-                            <option value="0">Thanh toán khi nhận hàng (COD)</option>
+                            <option value="0">Chuyển khoản</option>
                             <option value="1">Thanh toán tiền mặt</option>
                         </select>
                     </div>

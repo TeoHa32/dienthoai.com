@@ -20,6 +20,17 @@
             }
     }
 }
+function addCheckOutAction(){
+    if(isset($_GET['id'])){
+        $id= (int)$_GET['id'];
+        $item = getProductById($id);
+        $action = $_GET['action'];
+        if(addToCart($item)){
+           load_view('cart');
+        }
+}
+
+}
 function deleteAction(){
     deleteCart();
     load_view('cart');

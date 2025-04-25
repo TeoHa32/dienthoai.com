@@ -151,7 +151,7 @@
                         <td><?php echo $value['id']?></td>
                         <td><?php echo $value['create_at']?></td>
                         <td><?php echo currency_format($value['total'])?></td>
-                        <td><span class="status-completed">Đã giao hàng</span></td>
+                        <td><span class="status-completed"><?php if($value['status']==0) echo "<div style='color:red;'>Đang chờ xác nhận<div/>"; else if($value['status']==1) echo "<div style='color:yellow;'>Đã xác nhận<div/>"; else if($value['status']==2) echo "<div style='color:green;'>Đã giao hàng<div/>";?></span></td>
                         <td><a href="?mod=cart&controller=index&action=detailOrder&id=<?php echo $value['id']?>" class="btn-view">Xem chi tiết</a></td>
                     </tr>
                     <?php }?>

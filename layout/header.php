@@ -18,6 +18,7 @@
         <script src="./public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
         <script src="./public/js/carousel/owl.carousel.js" type="text/javascript"></script>
         <script src="./public/js/main.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
         <div id="site">
@@ -64,7 +65,7 @@
                                     <?php if(isset($_SESSION['is_login'])){ ?>
                                     <span class="title"><a href="?mod=users&controller=index&action=detailUser"><i class="fa-solid fa-user"  aria-hidden="true"></i></i></a></span>
                                     <?php }else{ ?>
-                                    <span class="title"><a href="?mod=users&action=index"><i class="fa-solid fa-right-to-bracket"  aria-hidden="true"></i></a></span>
+                                    <span class="title"><a href="?mod=users&action=index"><i class="fa-solid fa-right-to-bracket"></i></a></span>
                                     <?php } ?>
                                 </div>
                                 <div id="btn-respon" class="fl-right"><i class="fa fa-bars" aria-hidden="true"></i></div>

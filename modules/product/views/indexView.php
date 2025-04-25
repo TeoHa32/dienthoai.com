@@ -34,7 +34,7 @@
                             </div>
                             <div class="action clearfix">
                             <a href="?mod=cart&controller=index&action=add&id=<?php echo $item['id'];?>" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                <a href="?mod=cart&controller=index&action=addCheckOut&id=<?php echo $item['id'];?>" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
                             </div>
                         </li>
                         <?php } ?>

@@ -468,7 +468,13 @@
     padding: 10px 10px 30px 10px;
     border: 1px solid transparent;
 }
+#list-product-wp .section-detail .list-item li a img{
+    height: 180px;
+}
 #feature-product-wp .section-detail .list-item li{ border: 1px solid transparent;}
+#feature-product-wp .section-detail .list-item li a img{
+    height: 180px;
+}
 #list-product-wp .section-detail .list-item li:hover, #feature-product-wp .section-detail .list-item li:hover{ border: 1px solid #ddd;}
 #list-product-wp .section-detail .list-item li:nth-child(4n){ margin-right: 0!important;}
 

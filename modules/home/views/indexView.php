@@ -78,7 +78,7 @@
                             </div>
                             <div class="action clearfix">
                                 <a href="?mod=cart&controller=index&action=add&id=<?php echo $item['id'];?>" title="" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="" class="buy-now fl-right">Mua ngay</a>
+                                <a href="?mod=cart&controller=index&action=addCheckOut&id=<?php echo $item['id'];?>" title="" class="buy-now fl-right">Mua ngay</a>
                             </div>
                         </li>
                         <?php }?>
@@ -105,7 +105,7 @@
                             </div>
                             <div class="action clearfix">
                                 <a href="?mod=cart&controller=index&action=add&id=<?php echo $item['id'];?>" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                <a href="?mod=cart&controller=index&action=addCheckOut&id=<?php echo $item['id'];?>" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
                             </div>
                         </li>
                         <?php }?>
@@ -115,7 +115,7 @@
             </div>
             <div class="section" id="list-product-wp">
                 <div class="section-head">
-                    <h3 class="section-title">Laptop</h3>
+                    <h3 class="section-title">Sam Sung</h3>
                 </div>
                 <div class="section-detail">
                     <ul class="list-item clearfix">
@@ -132,7 +132,7 @@
                             </div>
                             <div class="action clearfix">
                                 <a href="?mod=cart&controller=index&action=add&id=<?php echo $item['id'];?>" title="Thêm giỏ hàng" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="?page=checkout" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
+                                <a href="?mod=cart&controller=index&action=addCheckOut&id=<?php echo $item['id'];?>" title="Mua ngay" class="buy-now fl-right">Mua ngay</a>
                             </div>
                         </li>
                         <?php }?>

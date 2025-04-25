@@ -106,13 +106,12 @@ strong {
 
         <div class="payment-info">
             <h3>Thông tin thanh toán</h3>
-            <p><strong>Phương thức thanh toán:</strong> Thanh toán khi nhận hàng</p>
+            <p><strong>Phương thức thanh toán:</strong> <?php if($bill['payment_method']==1) echo 'Thanh toán tiền mặt'; else echo 'Chuyển khoản'; ?> </p>
             <p><strong>Trạng thái thanh toán:</strong> Chưa thanh toán</p>
         </div>
-
         <div class="order-status">
             <h3>Trạng thái đơn hàng</h3>
-            <p><strong>Tình trạng:</strong> Đang xử lý</p>
+            <p><strong>Tình trạng:</strong><?php if($bill['status']==0) echo "<div style='color:red;'>Đang chờ xác nhận<div/>"; else if($bill['status']==1) echo "<div style='color:yellow;'>Đã xác nhận<div/>"; else if($bill['status']==2) echo "<div style='color:green;'>Đã giao hàng<div/>";?></p>
         </div>
     </div>
 </div>
