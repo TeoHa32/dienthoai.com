@@ -50,14 +50,15 @@ function orderAction(){
         $address = $_POST['address'];
         $payment = $_POST['payment'];
         $total = $_SESSION['cart']['info']['total'];
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $data = array(
             'id_customer'=>$id_customer,
             'address'=>$address,
             'payment_method'=> $payment,
             'status'=>0,
-            'total' => $total
+            'total' => $total, 
+            'create_at'=> $now = date('Y-m-d H:i:s')
         );
-
         if(!empty($data)){
             $result = addToBill($data);
            $bill = getBillById($result);
@@ -75,11 +76,20 @@ function orderAction(){
                         unset($_SESSION['cart']);
                         $listInfoBill = getListInfoBill($result);
                         // print_r($listInfoBill);
-                        load_view("detailBill",['listInfoBill'=>$listInfoBill,'bill'=>$bill,'customer'=>$customer]);
+                        redirect('?mod=cart&controller=index&action=detailOrder&id='.$bill['id']);
                     }
                 }
             }
         }
+    }
+}
+function detailOrderAction(){
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $customer = getCustomerById($id);
+        $bill = getBillById($id);
+        $listInfoBill = getListInfoBill($bill['id']);
+        load_view('detailBill',['customer'=>$customer,'bill'=> $bill,'listInfoBill'=>$listInfoBill]);
     }
 }
 ?>

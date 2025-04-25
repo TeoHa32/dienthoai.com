@@ -62,15 +62,14 @@ strong {
         <h2>Chi tiết đơn hàng</h2>
         <div class="bill-info">
             <?php if(isset($customer)){?>
-            <h3>Thông tin đơn hàng #123456</h3>
-            <p><strong>Ngày đặt:</strong> <?php if(isset($bill['created_at'])) echo $bill['created_at'] ?></p>
-            <p><strong>Tên khách hàng:</strong> <?php echo $customer['fullname']?></p>
+            <h3>Thông tin đơn hàng : <?php echo $bill['id'];?></h3>
+            <p><strong>Ngày đặt:</strong> <?php if(isset($bill['create_at'])) echo $bill['create_at'] ?></p>
+            <p><strong>Tên khách hàng:</strong> <?php echo $customer['fullname'];?></p>
             <p><strong>Số điện thoại:</strong> <?php echo $customer['phone']?></p>
             <p><strong>Địa chỉ:</strong><?php if(isset($bill['address'])) echo $bill['address']?></p>
             <p><strong>Email:</strong><?php echo $customer['email']?></p>
             <?php }?>
         </div>
-
         <div class="order-details">
             <h3>Sản phẩm đã mua</h3>
             <table class="table">

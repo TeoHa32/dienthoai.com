@@ -70,11 +70,7 @@ function updateCart($list){
 function getListInfoBill($id){
     $sql = "SELECT * FROM billinfo WHERE bill_id = $id";
     $result = db_fetch_array($sql);
-    print_r($result);
-    if(!empty($result)){
-        return $result;
-    }
-    return false;
+    return $result;
 }
 function getProductCartById($id){
     $sql = "SELECT * FROM products WHERE id = $id";

@@ -152,7 +152,7 @@
                         <td><?php echo $value['create_at']?></td>
                         <td><?php echo currency_format($value['total'])?></td>
                         <td><span class="status-completed">Đã giao hàng</span></td>
-                        <td><a href="#" class="btn-view">Xem chi tiết</a></td>
+                        <td><a href="?mod=cart&controller=index&action=detailOrder&id=<?php echo $value['id']?>" class="btn-view">Xem chi tiết</a></td>
                     </tr>
                     <?php }?>
                     <?php }?>
