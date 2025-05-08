@@ -7,6 +7,9 @@
     width: 35%;
     margin-bottom: 15px;
 }
+.flexSearch{
+    display: flex;
+}
 
 .add-cat-page #detail-page .section-detail textarea{
     display: block;

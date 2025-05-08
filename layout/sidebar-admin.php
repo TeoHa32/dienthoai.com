@@ -39,10 +39,10 @@
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="?page=list_order" title="" class="nav-link">Danh sách đơn hàng</a>
+                    <a href="?mod=admin&controller=order&action=index" title="" class="nav-link">Danh sách đơn hàng</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?page=list_customer" title="" class="nav-link">Danh sách khách hàng</a>
+                    <a href="?mod=admin&controller=customer&action=index" title="" class="nav-link">Danh sách khách hàng</a>
                 </li>
             </ul>
         </li>
