@@ -1,5 +1,4 @@
 <?php get_header('admin'); ?>
-
 <div id="main-content-wp" class="list-post-page">
     <div class="wrap clearfix">
     <?php get_sidebar('admin'); ?>
