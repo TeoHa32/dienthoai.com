@@ -2,7 +2,6 @@
 function construct(){
     load_model('index');
 }
-
 function indexAction(){
     if(isset($_SESSION['is_loginAdmin'])){
         $countBill =  countBill();
@@ -14,6 +13,4 @@ function indexAction(){
         redirect('?mod=users&controller=index&action=index');
     }
 }
-
-
 ?>
