@@ -19,9 +19,9 @@
                 <div class="section-detail clearfix">
                     <div class="thumb-wp fl-left">
                         <a href="" title="" id="main-thumb">
-                            <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_70aaf2_700x700_maxb.jpg"/>
+                            <img id="zoom" src="<?php if(isset($product['id'])) echo getImgById($product['id'])['src']?>" />
                         </a>
-                        <div id="list-thumb">
+                        <!-- <div id="list-thumb">
                             <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_70aaf2_700x700_maxb.jpg">
                                 <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/sxlpFs_simg_02d57e_50x50_maxb.jpg" />
                             </a>
@@ -40,10 +40,10 @@
                             <a href="" data-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_ab1f47_350x350_maxb.jpg" data-zoom-image="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_70aaf2_700x700_maxb.jpg">
                                 <img id="zoom" src="https://media3.scdn.vn/img2/2017/10_30/BlccRg_simg_02d57e_50x50_maxb.jpg" />
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="thumb-respon-wp fl-left">
-                        <img src="public/images/img-pro-01.png" alt="">
+                        <img src="<?php if(isset($product['id'])) echo getImgById($product['id'])['src']?> alt="">
                     </div>
                     <div class="info fl-right">
                         <h3 class="product-name"><?php if(isset($product['name'])) echo $product['name'] ?></h3>
