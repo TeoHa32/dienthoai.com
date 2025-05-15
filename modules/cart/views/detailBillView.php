@@ -87,11 +87,12 @@ strong {
                         
                     <tr>
                         <td><?php echo getProductById($item['product_id'])['name']?></td>
-                        <td><?php echo $item['quantity']?> </td>
+                        <td style="text-align: center;"><?php echo $item['quantity']?> </td>
                         <td><?php echo currency_format(getProductCartById($item['product_id'])['price'])?></td>
+                        
                         <td><?php echo currency_format($item['quantity'] * getProductCartById($item['product_id'])['price'])?></td>
                     </tr>
-                    <?php }?>
+                    <?php }?>   
                     <?php }?>
                     
                 </tbody>

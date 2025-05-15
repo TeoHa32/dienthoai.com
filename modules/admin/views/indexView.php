@@ -15,7 +15,7 @@
                             <div class="card bg-primary text-white mb-4">
                                 <div class="card-body">
                                     <h4>Tổng số sản phẩm</h4>
-                                    <h2><?php if(isset($countProduct['total_products']) AND !empty($countProduct['total_products'])) echo $countProduct['total_products'];?></h2>
+                                    <h2><?php if(isset($countProduct['countProduct']) AND !empty($countProduct['countProduct'])) echo $countProduct['countProduct'];?></h2>
                                 </div>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                             <div class="card bg-warning text-white mb-4">
                                 <div class="card-body">
                                     <h4>Tổng số đơn hàng</h4>
-                                    <h2><?php if(isset($countBill['total_orders']) AND !empty($countBill['total_orders'])) echo $countBill['total_orders'];?></h2>
+                                    <h2><?php if(isset($countBill['countbill']) AND !empty($countBill['countbill'])) echo $countBill['countbill'];?></h2>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="card bg-success text-white mb-4">
                                 <div class="card-body">
                                     <h4>Doanh thu</h4>
-                                    <h2><?php if(isset($sumBill['sum_orders']) AND !empty($sumBill['sum_orders'])) echo $sumBill['sum_orders'];?></h2>
+                                    <h2><?php if(isset($sumBill['sumbill']) AND !empty($sumBill['sumbill'])) echo  $sumBill['sumbill'];?></h2>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                             <div class="card bg-danger text-white mb-4">
                                 <div class="card-body">
                                     <h4>Số lượng khách hàng</h4>
-                                    <h2><?php if(isset($countCustomer['total_customers']) AND !empty($countCustomer['total_customers'])) echo $countCustomer['total_customers'];?></h2>
+                                    <h2><?php if(isset($countCustomer['countCustomer']) AND !empty($countCustomer['countCustomer'])) echo $countCustomer['countCustomer'];?></h2>
                                 </div>
                             </div>
                         </div>

@@ -87,9 +87,10 @@ function orderAction(){
                         unset($_SESSION['cart']);
                         $listInfoBill = getListInfoBill($result);
                         // print_r($listInfoBill);
-                        redirect('?mod=cart&controller=index&action=detailOrder&id='.$bill['id']);
+                        
                     }
                 }
+                redirect('?mod=cart&controller=index&action=detailOrder&id='.$bill['id']);
             }
         }
     }
@@ -98,8 +99,11 @@ function detailOrderAction(){
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $customer = getCustomerById($id);
+        
         $bill = getBillById($id);
+        $customer = getCustomerById($bill['id_customer']);
         $listInfoBill = getListInfoBill($bill['id']);
+        print_r($listInfoBill);
         load_view('detailBill',['customer'=>$customer,'bill'=> $bill,'listInfoBill'=>$listInfoBill]);
     }
 }
